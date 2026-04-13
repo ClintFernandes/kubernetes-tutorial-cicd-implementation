@@ -32,7 +32,7 @@ jobs:
     # ── 4. Build Docker image ─────────────────────────────────
     - name: Build Docker image
       env:
-        IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/my-k8s-app
+        IMAGE_NAME: ${{ vars.DOCKER_USERNAME }}/my-k8s-app
       run: |
         docker build -t $IMAGE_NAME:$IMAGE_TAG .
         docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_NAME:latest
